@@ -35,7 +35,7 @@
         >Add to cart</button>
       </div>
     </div>
-    <div class="row m-0 p-2 d-flex justify-content-between">
+    <div class="row m-0 p-2 d-flex justify-content-between" *ngIf="products.length">
       <div class="btn-group pull-right">
         <button *appCounter="let page of pageCount" (click)="changePage(page)"
                 class="btn btn-outline-secondary" [class.active]="page == selectedPage">
