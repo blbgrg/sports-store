@@ -1,5 +1,6 @@
 <div class="navbar navbar-dark bg-secondary">
   <a class="navbar-brand">SPORTS STORE</a>
+  <app-cart-summary></app-cart-summary>
 </div>
 <div class="row m-0">
   <div class="col-3 bg-light p-3">
@@ -26,7 +27,13 @@
           {{ product.price | currency:"USD":"symbol":"2.2-2" }}
         </span>
       </h4>
-      <div class="card-text p-3">{{product.description}}</div>
+      <div class="card-text p-3">
+        {{product.description}}
+        <button
+          class="btn btn-success btn-sm pull-right"
+          (click)="addProductToCart(product)"
+        >Add to cart</button>
+      </div>
     </div>
     <div class="row m-0 p-2 d-flex justify-content-between">
       <div class="btn-group pull-right">
